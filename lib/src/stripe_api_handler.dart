@@ -47,25 +47,27 @@ class StripeApiHandler {
 
     http.Response response;
 
+    final uri = Uri.parse(url);
+
     switch (method) {
       case RequestMethod.get:
         var fUrl = url;
         if (params != null && params.isNotEmpty) {
           fUrl = '$url?${_encodeMap(params)}';
         }
-        response = await _client.get(fUrl, headers: headers);
+        response = await _client.get(Uri.parse(fUrl), headers: headers);
         break;
 
       case RequestMethod.post:
         response = await _client.post(
-          url,
+          uri,
           headers: headers,
           body: params != null ? _urlEncodeMap(params) : null,
         );
         break;
 
       case RequestMethod.delete:
-        response = await _client.delete(url, headers: headers);
+        response = await _client.delete(Uri.parse(url), headers: headers);
         break;
       default:
         throw Exception('Request Method: $method not implemented');
