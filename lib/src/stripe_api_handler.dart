@@ -67,7 +67,7 @@ class StripeApiHandler {
         break;
 
       case RequestMethod.delete:
-        response = await _client.delete(Uri.parse(url), headers: headers);
+        response = await _client.delete(uri, headers: headers);
         break;
       default:
         throw Exception('Request Method: $method not implemented');

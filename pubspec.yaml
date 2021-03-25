@@ -10,7 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   http: ^0.13.1
   url_launcher: ^6.0.2
   mask_text_input_formatter: ^1.2.1
@@ -19,7 +18,7 @@ dependencies:
   supercharged: ^1.12.0
   awesome_card: ^1.1.0
   uni_links: ^0.4.0
-  credit_card_validator: ^1.1.0
+  credit_card_validator: ^2.0.0-nullsafety.0
 
 dev_dependencies:
   flutter_test:
