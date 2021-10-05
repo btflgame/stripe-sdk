@@ -40,16 +40,16 @@ class _LoadStuffButtonState extends State<LoadStuffButton> {
       onTap: _clickLoadStuff,
       child: CustomAnimation<MultiTweenValues<_AniProps>>(
         control: !_startedLoading
-            ? CustomAnimationControl.STOP
-            : CustomAnimationControl.PLAY,
+            ? CustomAnimationControl.stop
+            : CustomAnimationControl.play,
         tween: tween1,
         duration: tween1.duration,
         animationStatusListener: _listenToAnimationFinished,
         builder: (context, child, ani1) {
           return CustomAnimation<MultiTweenValues<_AniProps>>(
             control: !playSecondAnimation
-                ? CustomAnimationControl.STOP
-                : CustomAnimationControl.PLAY,
+                ? CustomAnimationControl.stop
+                : CustomAnimationControl.play,
             tween: tween2,
             duration: tween2.duration,
             builder: (context, child, ani2) {
